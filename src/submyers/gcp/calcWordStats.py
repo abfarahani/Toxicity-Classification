@@ -26,7 +26,7 @@ with open('train.csv', mode='r') as csv_file:
         lineCount += 1
 
 allWords.sort()
-with open("allWordStats.csv",mode="w") as output:
+with open("trainWordStats.csv",mode="w") as output:
     for i in range(0,len(allWords)):
         word = allWords[i]
         if len(word)==0:
