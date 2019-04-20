@@ -1,0 +1,40 @@
+###
+# GCP Actions
+###
+
+## Synopsis ##
+
+This document contains a list of actions I performed on the GSP to get things to work.
+All of the actions listed are not critical, but I took notes so I we need to start all
+again, we know how to format things.
+
+Also, I used the gsutil ofthen to work with GSP ssh command line to copy over the train
+and test CSV files to access the data, commands like:
+
+  $ gsutil cp gs://jbmfinal/train.csv ./ 
+
+to copy over the train.csv data set from user interface based GSP storage area.
+
+Please note that I often had to use python3 and pip3 to get things operational.
+
+## Action List ##
+
+$ sudo apt-get install python3-pip
+$ sudo apt-get install locate
+$ sudo /usr/bin/updatedb
+$ locate pip | grep "pip$"
+$ vim ~/.bashrc
+    export PATH=$PATH:/usr/lib/python3/dist-packages
+$ source ~/.bashrc
+$ pip3 install GoogleAppEngineCloudStorageClient
+$ pip3 install google-cloud-storage
+$ vim ~/.bashrc
+    export PATH=$PATH:/home/jonathan_brett_myers/.local/lib/python3.5/site-packages 
+$ source ~/.bashrc
+$ pip3 install vaderSentiment
+$ pip3 install statistics
+$ vim ~/.bashrc
+    export PATH=$PATH:/usr/local/lib/python3.5/dist-packages 
+$ source ~/.bashrc
+$ sudo pip3 install pyspellchecker
+

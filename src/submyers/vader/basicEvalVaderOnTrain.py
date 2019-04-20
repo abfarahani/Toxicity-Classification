@@ -30,12 +30,14 @@ with open('../../../data/train.csv', mode='r') as csv_file:
             worst = diffs[line_count-1] 
             worstLine = f'{row["comment_text"]}\n' + str(vaderScores[row["comment_text"]]) + ',' + str(trainScores[row["comment_text"]]) + ',' + str(worst)
         line_count += 1
-        if(line_count > 1000):
+        if(line_count > 30000):
             break
     print(f'Processed {line_count} lines.')
 
 
 print(worstLine)
+
+mean = mean/(line_count-1)
 
 for i in range(0,line_count-1):
     std += (mean-diffs[i])**2
