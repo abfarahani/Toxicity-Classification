@@ -38,4 +38,4 @@ $ vim ~/.bashrc
 $ source ~/.bashrc
 $ sudo pip3 install pyspellchecker
 $ sudo pip3 install pyspark
-
+$ sudo pip3 install numpy
