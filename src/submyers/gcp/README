@@ -37,4 +37,5 @@ $ vim ~/.bashrc
     export PATH=$PATH:/usr/local/lib/python3.5/dist-packages 
 $ source ~/.bashrc
 $ sudo pip3 install pyspellchecker
+$ sudo pip3 install pyspark
 
