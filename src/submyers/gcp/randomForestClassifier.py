@@ -14,15 +14,16 @@ def randomForestClassifier(args):
     #
     # Read in the data
     #
-#   trainingData = spark.read.format('libsvm').load(args.train)
-#   testingData = spark.read.format('libsvm').load(args.test)
 
-    data = spark.read.format('libsvm').load(args.train)
+    print("Opening file: '" + args.train + "'")
+    data = spark.read.format('libsvm').load(args.allData)
+    trainingData = spark.read.format('libsvm').load(args.train)
+    testingData = spark.read.format('libsvm').load(args.test)
 
-    labelIndexer = StringIndexer(inputCol="label", outputCol="indexedLabel").fit(trainingData)
+    labelIndexer = StringIndexer(inputCol="label", outputCol="indexedLabel").fit(data)
 
     # Treat all values as continuous (not categorical)
-    featureIndexer = VectorIndexer(inputCol="features", outputCol="indexedFeatures", maxCategories=0).fit()
+    featureIndexer = VectorIndexer(inputCol="features", outputCol="indexedFeatures", maxCategories=2).fit(data)
 
     (trainingData, testData) = data.randomSplit([0.7, 0.3])
 
@@ -65,6 +66,7 @@ if __name__ == '__main__':
 
     parser.add_argument('-train','--train',required=True,help='Training libsvm file')
     parser.add_argument('-test','--test',required=True,help='Testing libsvm file')
+    parser.add_argument('-allData','--allData',required=True,help='Union of training and test data')
 
     args = parser.parse_args()
 
