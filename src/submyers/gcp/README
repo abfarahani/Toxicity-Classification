@@ -39,3 +39,5 @@ $ source ~/.bashrc
 $ sudo pip3 install pyspellchecker
 $ sudo pip3 install pyspark
 $ sudo pip3 install numpy
+$ sudo pip3 install xgboost
+
