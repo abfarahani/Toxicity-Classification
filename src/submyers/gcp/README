@@ -41,3 +41,7 @@ $ sudo pip3 install pyspark
 $ sudo pip3 install numpy
 $ sudo pip3 install xgboost
 $ sudo pip3 install sklearn
+$ sudo pip3 install pandas
+$ sudo pip3 install textblob
+$ sudo pip3 install keras
+$ sudo pip3 install tensorflow
