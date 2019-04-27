@@ -45,3 +45,4 @@ $ sudo pip3 install pandas
 $ sudo pip3 install textblob
 $ sudo pip3 install keras
 $ sudo pip3 install tensorflow
+$ sudo pip3 install wordnet
