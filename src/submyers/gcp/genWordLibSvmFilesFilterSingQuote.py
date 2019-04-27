@@ -59,7 +59,7 @@ with open('train.csv', mode='r') as csv_file:
 		for j in range(0,len(arr)):
 			if arr[j] not in allWordHash:
 				continue
-			if re.search('\'',arr[j]) and not research('^\w+\'\w+$',arr[j])
+			if re.search('\'',arr[j]) and not re.search('^\w+\'\w+$',arr[j]):
 				continue
 			if arr[j] not in wordCounts:
 				wordCounts[arr[j]] = 0
@@ -142,7 +142,7 @@ with open('test.csv', mode='r') as csv_file:
 		for j in range(0,len(arr)):
 			if arr[j] not in allWordHash:
 				continue
-			if re.search('\'',arr[j]) and not research('^\w+\'\w+$',arr[j])
+			if re.search('\'',arr[j]) and not re.search('^\w+\'\w+$',arr[j]):
 				continue
 			if arr[j] not in wordCounts:
 				wordCounts[arr[j]] = 0
