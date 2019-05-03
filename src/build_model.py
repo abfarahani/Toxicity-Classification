@@ -64,7 +64,7 @@ class Model():
 
         self.model = Model(lstm_input, lstm_output)
 
-    def buil_cnn_model(self, word_index, emb_mat):
+    def build_cnn_model(self, word_index, emb_mat):
         """ Builds a CNN model
 
         Parameters
@@ -86,7 +86,8 @@ class Model():
         cnn_output = layers.Dense(1, activation="sigmoid")(output_layer1)
         self.model = Model(inputs=cnn_input, outputs=cnn_output)
 
-    def train_model(self, X_train, y_train, class_weight, metrics=[fmeasure]):
+    def train_model(self, X_train, y_train, class_weight={{0: 1.0, 1: 1.0}},
+                    metrics=[fmeasure]):
         """ trains the model
 
         Parameters
