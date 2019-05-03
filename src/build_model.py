@@ -20,9 +20,7 @@ from keras.callbacks import EarlyStopping
 from keras.utils import plot_model
 
 
-from util import data_loader
 from util import fmeasure
-from util import build_embeddings
 
 
 class Model():
