@@ -34,7 +34,7 @@ class Model():
         self.n_epochs = n_epochs
         self.model = Model()
 
-    def build_lstm_model(self, word_index, emb_mat, d_rate=0.3):
+    def build_lstm(self, word_index, emb_mat, d_rate=0.3):
         """ Builds an LSTM model
 
         Parameters
@@ -64,7 +64,7 @@ class Model():
 
         self.model = Model(lstm_input, lstm_output)
 
-    def build_cnn_model(self, word_index, emb_mat):
+    def build_cnn(self, word_index, emb_mat):
         """ Builds a CNN model
 
         Parameters
@@ -86,7 +86,7 @@ class Model():
         cnn_output = layers.Dense(1, activation="sigmoid")(output_layer1)
         self.model = Model(inputs=cnn_input, outputs=cnn_output)
 
-    def train_model(self, X_train, y_train, class_weight={{0: 1.0, 1: 1.0}},
+    def train(self, X_train, y_train, class_weight={{0: 1.0, 1: 1.0}},
                     metrics=[fmeasure]):
         """ trains the model
 
@@ -118,7 +118,7 @@ class Model():
         test_df = test_df[['id', 'prediction']]
         test_df.to_csv(submission_file, index=False)
 
-    def plot_model(self, outfile):
+    def plot(self, outfile):
         """ plots the model
 
         Parameters
