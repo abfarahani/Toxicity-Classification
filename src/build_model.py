@@ -88,8 +88,7 @@ class Model():
         cnn_output = layers.Dense(1, activation="sigmoid")(output_layer1)
         self.model = Model(inputs=cnn_input, outputs=cnn_output)
 
-    def train_model(self, X_train, y_train, metrics=[fmeasure],
-                    class_weight=class_weight):
+    def train_model(self, X_train, y_train, class_weight, metrics=[fmeasure]):
         """ trains the model
 
         Parameters
