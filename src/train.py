@@ -1,4 +1,6 @@
+import sys
 import argparse
+
 import pandas as pd
 
 from build_model import Model
@@ -57,3 +59,6 @@ def main():
     # Predicting the labels for test set
     test_df = pd.read_csv(args['test'])
     Model.predict(X_test, test_df, args['output'])
+
+if __name__ == '__main__':
+	sys.exit(main())
