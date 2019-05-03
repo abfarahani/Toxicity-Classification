@@ -6,8 +6,8 @@ This function looks at the output file generated from running the spell
 correction process and removes all words for which the spell checker could
 not find a rational alternative spelling
 """
-def run(spellCorrectFiles="",trainWordInputFile="", testWordInputFile="", \
-        trainWordOutputFile="", testWordOutputFile=""):
+def run(spellCorrectFiles="",testWordInputFile ="",trainWordInputFile="", \
+        testWordOutputFile="", trainWordOutputFile=""):
     removeList = []
     allLines = ""
     

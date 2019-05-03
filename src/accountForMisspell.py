@@ -6,6 +6,10 @@ from spellchecker import SpellChecker
 This function looks through all words in the target training file, applies
 spell check to each word, and stores the results in a targetOutputFile -- by
 default the target file is data/spellCorrections.txt
+
+install package using:
+    $ sudo pip3 install pyspellchecker
+
 """
 def run(targTrainFile, targetOutputFile=""):
 
