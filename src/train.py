@@ -9,7 +9,8 @@ from util import build_embeddings
 
 
 def main():
-    parser = argparse.ArgumentParser(description='reads input file and trains a model for toxicity classification')
+    parser = argparse.ArgumentParser(description='reads input file and trains\
+                                     a model for toxicity classification')
 
     # Required arguments
     parser.add_argument("-i", "--input", required=True,
@@ -20,16 +21,16 @@ def main():
                         help="Path to submission file")
     parser.add_argument("-e", "--embedding", required=True,
                         help="Path to embedding file")
-    
+
     # Optional arguments
     parser.add_argument("-c", "--text_column", type=str, default="commnet_text",
                         help="name of the column that contains the text")
     parser.add_argument("-l", "--label_column", type=str, default="target",
                         help="name of the column that contains the labels")
     parser.add_argument("-p", "--preprocess", type=bool, default=False,
-                        help="if set the text will be processed before fed to the model")
-    parser.add_argument("-m", "--model", type=str, choices=['LSTM','CNN'], default="LSTM",
-                        help="the deep neural network")
+                        help="if set the text will be processed")
+    parser.add_argument("-m", "--model", type=str, choices=['LSTM', 'CNN'],
+                        default="LSTM", help="the deep neural network")
 
     args = vars(parser.parse_args())
 
