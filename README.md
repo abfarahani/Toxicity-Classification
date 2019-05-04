@@ -93,6 +93,14 @@ TRAIN is a path to the Kaggle file train.csv, TEST is a path to the Kaggle file 
 
 ##### 3 - Calculate Sentiment
 
+The script calcSentiment.py applies the Vader package to all comments stored in the train.csv and test.csv files and then generates files under the work directory (see earlier sections on the work directory) for each word in the subdirectories words/ and wordStats/.
+
+```
+usage: calcSentiment.py [-h] -train TRAIN -test TEST [-wd WORKDIR]
+                        [-singQuote]
+```
+Train and test data from Kaggle is required, the work directory is optional and has a default value (see previous section), and the single quote is optional (and is False by default).
+
 ##### 4 - Predict Toxicity
 
 The script applySentiment.py takes the values calculated and stored in the "data/" directory (or a different directory if one was specified earlier), and applies those values to the test.csv file from Kaggle to generate a submission.csv file for the Kaggle compitition. The script takes the following arguments:
