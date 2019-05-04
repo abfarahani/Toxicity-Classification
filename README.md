@@ -22,6 +22,7 @@ This package comes with the following directories, scripts, and files:
 * doc/ : Directory holds the document we wrote for this project
 * data/ : An area used by the Sentiment python processes
 * formatData.py : Reformats the data supplied by Kaggle for later compulations
+* calcSentiment.py : Takes the formated data and generates files for each word storing sentement values and statistics
 * applySentiment.py : Takes the data stored in the "data/" directory and predicts toxicity scores for the test.csv data from Kaggle
 
 ## Programs
