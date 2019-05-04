@@ -80,6 +80,7 @@ following python packages
 $ sudo pip3 install vaderSentiment
 $ sudo pip3 install keras
 $ sudo pip3 install statistics
+$ sudo pip3 install spellchecker
 ```
 
 ##### 2 - Format Data
