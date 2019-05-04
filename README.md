@@ -89,9 +89,17 @@ Format data by executing the formatData.py script. By default, the script makes 
 usage: formatData.py [-h] -train TRAIN -test TEST [-singQuote] [-wd WORKDIR]
 ```
 
-TRAIN is a path to the Kaggle file train.csv, TEST is a path to the Kaggle file test.csv, singQuote is an option to include single quotes that occur in words (like "we're"), and the WORKDIR is a directory noted in the previous paragraph (default: package directory "data/")
+TRAIN is a path to the Kaggle file train.csv, TEST is a path to the Kaggle file test.csv, singQuote is an option to include single quotes that occur in words (like "we're", False by default), and the WORKDIR is a directory noted in the previous paragraph (default: package directory "data/")
 
 ##### 3 - Calculate Sentiment
+
+The script calcSentiment.py applies the Vader package to all comments stored in the train.csv and test.csv files and then generates files under the work directory (see earlier sections on the work directory) for each word in the subdirectories words/ and wordStats/.
+
+```
+usage: calcSentiment.py [-h] -train TRAIN -test TEST [-wd WORKDIR]
+                        [-singQuote]
+```
+Train and test data from Kaggle is required, the work directory is optional and has a default value (see previous section), and the single quote is optional (and is False by default).
 
 ##### 4 - Predict Toxicity
 
