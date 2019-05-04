@@ -23,8 +23,6 @@ def run(trainFile, outputFile = ""):
     	for row in csv_reader:
     		if lineCount == 0:
     			lineCount += 1
-    		if lineCount % 10000 == 0:
-    			print(str(lineCount)+"\n")
     		row["comment_text"] = re.sub('[^a-zA-Z0-9\']+',' ', \
                  row["comment_text"])
     		row["comment_text"] = re.sub('\s+',' ',row["comment_text"])

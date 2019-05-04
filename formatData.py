@@ -3,9 +3,9 @@ import src.calcWordStats
 import src.commonWordFilter
 import src.accountForMisspell
 import src.applyDelWordStatAndCount
-import src.extractAllTestWordsSingleQuote
-import src.calcWordStatsSingQuite
-import src.commonWordFilterSingQuote
+import src.extractAllTestWordsSingQuote
+import src.calcWordStatsSingQuote
+import src.commonWordFilterSingleQuote
 
 import os
 import argparse
@@ -24,56 +24,56 @@ def main(args):
    """
    # Extract all words from files
    src.extractAllTestWords.run(args.test,
-                               args.wordDir+'/testWordCounts.csv')
+                               args.workDir+'/testWordCounts.csv')
    src.calcWordStats.run(args.train,
-                     args.wordDir+'/trainWordStats.csv')
+                     args.workDir+'/trainWordStats.csv')
    # Check spelling on trainign set
-   src.accountForMisspell.run(args.wordDir+'/trainWordStats.csv',\
-                              args.wordDir+'/trainMisspell.csv')
+   src.accountForMisspell.run(args.workDir+'/trainWordStats.csv',\
+                              args.workDir+'/trainMisspell.csv')
    # Remove all training words not recognized
    src.applyDelWordStatAndCount.run(
-           args.wordDir+'/trainMisspell.csv',
-           args.wordDir+'/testWordCounts.csv',
-           args.wordDir+'/trainWordStats.csv',
-           args.wordDir+'/testWordCountsDel.csv',
-           args.wordDir+'/trainWordStatsDel.csv'
+           args.workDir+'/trainMisspell.csv',
+           args.workDir+'/testWordCounts.csv',
+           args.workDir+'/trainWordStats.csv',
+           args.workDir+'/testWordCountsDel.csv',
+           args.workDir+'/trainWordStatsDel.csv'
            )
    # Remove all words not common in both sets
-   src.commonWordFilter.run(args.wordDir+'/testWordCountsDel.csv',
-                            args.wordDir+'/trainWordStatsDel.csv',
-                            args.wordDir+'/testWordCountsFilterDel.csv',
-                            args.wordDir+'/trainWordStatsFilterDel.csv' )
+   src.commonWordFilter.run(args.workDir+'/testWordCountsDel.csv',
+                            args.workDir+'/trainWordStatsDel.csv',
+                            args.workDir+'/testWordCountsFilterDel.csv',
+                            args.workDir+'/trainWordStatsFilterDel.csv' )
    # Expand this set if single quote was asked for
    if args.singQuote:
           src.extractAllTestWords.run(
                   args.test,
-                  args.wordDir+'/testWordCountsSingQuote.csv')
+                  args.workDir+'/testWordCountsSingQuote.csv')
           src.calcWordStats.run(
                   args.train,
-                  args.wordDir+'/trainWordStatsSingQuote.csv')
+                  args.workDir+'/trainWordStatsSingQuote.csv')
           src.accountForMisspell.run(
-                  args.wordDir+'/trainWordStatsSingQuote.csv',\
-                  args.wordDir+'/trainMisspellSingQuote.csv')
+                  args.workDir+'/trainWordStatsSingQuote.csv',\
+                  args.workDir+'/trainMisspellSingQuote.csv')
           src.applyDelWordStatAndCount.run(
-                  args.wordDir+'/trainMisspellSingQuote.csv',
-                  args.wordDir+'/testWordCountsSingQuote.csv',
-                  args.wordDir+'/trainWordStatsSingQuote.csv',
-                  args.wordDir+'/testWordCountsDelSingQuote.csv',
-                  args.wordDir+'/trainWordStatsDelSingQuote.csv'
+                  args.workDir+'/trainMisspellSingQuote.csv',
+                  args.workDir+'/testWordCountsSingQuote.csv',
+                  args.workDir+'/trainWordStatsSingQuote.csv',
+                  args.workDir+'/testWordCountsDelSingQuote.csv',
+                  args.workDir+'/trainWordStatsDelSingQuote.csv'
                   )
           src.commonWordFilter.run(
-                  args.wordDir+'/testWordCountsDelSingQuote.csv',
-                  args.wordDir+'/trainWordStatsDelSingQuote.csv',
-                  args.wordDir+'/testWordCountsFilterDelSingQuoteHold.csv',
-                  args.wordDir+'/trainWordStatsFilterDelSingQuoteHold.csv' 
+                  args.workDir+'/testWordCountsDelSingQuote.csv',
+                  args.workDir+'/trainWordStatsDelSingQuote.csv',
+                  args.workDir+'/testWordCountsFilterDelSingQuoteHold.csv',
+                  args.workDir+'/trainWordStatsFilterDelSingQuoteHold.csv' 
                   )
-          catCmd = 'cat '+args.wordDir+'/testWordCountsFilterDel.csv'\
-              ' '+args.wordDir+'/testWordCountsFilterDelSingQuoteHold.csv'\
-              ' > '+args.wordDir+'/testWordCountsFilterDelSingQuote.csv'
+          catCmd = 'cat '+args.workDir+'/testWordCountsFilterDel.csv'\
+              ' '+args.workDir+'/testWordCountsFilterDelSingQuoteHold.csv'\
+              ' > '+args.workDir+'/testWordCountsFilterDelSingQuote.csv'
           os.system(catCmd)
-          catCmd = 'cat '+args.wordDir+'/trainWordStatsFilterDel.csv'\
-              ' '+args.wordDir+'/trainWordStatsFilterDelSingQuoteHold.csv'\
-              ' > '+args.wordDir+'/testWordCountsFilterDelSingQuote.csv'
+          catCmd = 'cat '+args.workDir+'/trainWordStatsFilterDel.csv'\
+              ' '+args.workDir+'/trainWordStatsFilterDelSingQuoteHold.csv'\
+              ' > '+args.workDir+'/testWordCountsFilterDelSingQuote.csv'
           os.system(catCmd)
     
 if __name__ == "__main__":
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     parser.add_argument('-singQuote','--singQuite',required=False,\
                         action='store_true',default=False)
 
-    parser.add_argument('-wd','--wordDir',required=False,
+    parser.add_argument('-wd','--workDir',required=False,
         default=os.path.dirname(os.path.realpath(__file__))+\
         '../data',help='A directory that will store files intermediate files '\
         +'generated')

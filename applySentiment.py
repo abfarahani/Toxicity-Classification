@@ -14,7 +14,7 @@ def main(args):
     wordStats = {}
     
     # Read in statistical informatio for every word targeted
-    dirlist = os.listdir(args.wordDir+"/wordStats")
+    dirlist = os.listdir(args.workDir+"/wordStats")
     for file in dirlist:
     	word = re.sub(r"^([^\.]+)\.stats.csv",r"\1",file)
     	wordStats[word] = {}
@@ -39,7 +39,7 @@ def main(args):
     allLines = ""
     
     # Define the train sentament
-    with open(args.wordDir+"/trainSentament.csv",mode="r") as input:
+    with open(args.workDir+"/trainSentament.csv",mode="r") as input:
     	allLines = input.read()
     lines = allLines.split("\n")
     for line in lines:
@@ -50,7 +50,7 @@ def main(args):
     
     # Define the test sentament
     allLines = ""
-    with open(args.wordDir+"/testSentament.csv",mode="r") as input:
+    with open(args.workDir+"/testSentament.csv",mode="r") as input:
     	allLines = input.read()
     lines = allLines.split("\n")
     for line in lines:
@@ -139,7 +139,7 @@ if __name__ == "__main__":
         help="Define the path to the test file provided by the Kaggle "\
         +'competition')
 
-    parser.add_argument('-wd','--wordDir',required=False,\
+    parser.add_argument('-wd','--workDir',required=False,\
         default=os.path.dirname(os.path.realpath(__file__))+"../data",\
         help="DPath to work directory used during the execution of previous "\
         + "steps in sentiment process")
@@ -157,7 +157,7 @@ if __name__ == "__main__":
         +"part of contribution for prediction and results with skew in range "\
         +" [0,s2) use mean - default = 0.15")
 
-    parser.add_arguments('-o','--o',required=True,help='Define the output '\
+    parser.add_argument('-o','--o',required=True,help='Define the output '\
         +"file to store all predictions"
         )
 
