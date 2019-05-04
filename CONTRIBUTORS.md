@@ -11,4 +11,8 @@
 * Part of Presentation
 
 #### Saed Rezayi
-* 
+* Proposal
+* Part of final PDF
+* CNN and LSTM Model
+* Cleaning the codes
+* working on different parts of Github
