@@ -34,6 +34,12 @@ We implemented two models namely LSTM and CNN to address the classification task
 
 This project requires Python 3.x with `keras`, `sklearn`, `nltk`, `re`, and `bs4` libraries installed.
 
+#### Installation
+
+You can install the jigsaw package using the following command:
+
+`$ pip install --user -i https://test.pypi.org/simple/ jigsaw`
+
 #### Usage
 
 To run the model navigate to the `src/` directory and run the following command:
