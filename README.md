@@ -26,6 +26,33 @@ This package comes with the following directories, scripts, and files:
 
 ## Programs
 
+### Deep Model
+
+We implemented two models namely LSTM and CNN to address the classification task. 
+
+#### Requiremnets
+
+This project requires Python 3.x with `keras`, `sklearn`, `nltk`, `re`, and `bs4` libraries installed.
+
+#### Usage
+
+To run the model navigate to the `src/` directory and run the following command:
+
+`$ python train.py -i /path/to/training-set/ -t /path/to/test-set -o /path/to/output -e /path/to/embedding`
+
+List of command line arguments to pass to the program are as follows:
+
+	--input: Path to training set.
+	--test: Path to test set.
+	--output: Path to submission file.
+	--embedding: path to embedding file.
+	--text_column: name of the column that contains the text.
+	--label_column: name of the column that contains the labels.
+	--preprocess: if set the text will be processed.
+	--chunk_size: width and height of chunk, two values.
+	--overlap: value determining whether to merge.
+	--model: the deep neural network model (CNN or LSTM).
+
 ### Sentiment 
 
 #### Outline
