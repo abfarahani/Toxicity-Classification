@@ -1,18 +1,21 @@
 #### Abolfazl Farahani
-* Part of final PDF
-* LSTM Model
-* Part of Presentation 
-* Creating Wiki 
+* Wrote final report
+* Developed LSTM Model
+* Prepared presentation slides
+* Created the wiki 
+* Reviewed the code
 
 #### Jonathan Myers
-* Initial Proposal
-* Part of final PDF
-* Sentiment Method
-* Part of Presentation
+* Wrote initial Proposal
+* Wrote final report
+* Implemented sentiment analysis
+* Prepared presentation slides
+* Contributed in README
 
 #### Saed Rezayi
-* Proposal
-* Part of final PDF
-* CNN and LSTM Model
-* Cleaning the codes
-* working on different parts of Github
+* Wrote the proposal
+* Wrote final report
+* Developed the CNN and LSTM Model
+* Cleaned the code
+* Contributed in README
+* Created a pip package
